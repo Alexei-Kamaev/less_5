@@ -5,7 +5,7 @@ const summRub = +prompt('Сумма Ваших покупок:');
 const countCart = +prompt('Сколько товаров Вы купили:');
 const promoKod = prompt('Введите Ваш промокод:');
 
-const summSale = (summ, count, promo) => {
+function calculate(summ, count, promo) {
     let skidos = 0;
     count >= 10 ? skidos = summ * 0.03 : skidos += 0;
     summ >= 30000 ? skidos += (summ-30000) * 0.15 : skidos += 0;
@@ -18,7 +18,7 @@ const summSale = (summ, count, promo) => {
     return(skidos);
 }
 
-console.log(`Вы купили ${countCart} товаров, на сумму: ${summRub}, с промокодом ${promoKod} Ваша скидка составила: ${summSale(summRub, countCart, promoKod)} рублей`);
+console.log(`Вы купили ${countCart} товаров, на сумму: ${summRub}, с промокодом ${promoKod} Ваша скидка составила: ${calculate(summRub, countCart, promoKod)} рублей`);
 
 
 
